@@ -10,6 +10,7 @@
 >mock (模拟后端请求)\
 >axios (封装了请求工具类)\
 >eslint(代码检测)\
+>vant(Mobile组件库)
 >
 ## Build Setup
 
