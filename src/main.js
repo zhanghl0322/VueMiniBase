@@ -10,3 +10,8 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount("#app");
+
+
+//this.$store.commit('SET_INFO', {name: data.name, id: data.id})
+
+//this.$store.dispatch('clearKeepAlive')
