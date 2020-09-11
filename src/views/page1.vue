@@ -28,9 +28,9 @@ export default {
   },
   methods: {
     lodaPage() {
-      Dialog.alert({
-        message: "弹窗内容1212121"
-      });
+      // Dialog.alert({
+      //   message: "弹窗内容1212121"
+      // });
       this.$store.commit('SET_INFO', {name: '1212', id: '8888'})
 
       console.log(this.$store.state.user.info);
