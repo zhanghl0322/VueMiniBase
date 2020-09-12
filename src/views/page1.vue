@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { Dialog } from "vant";
+
 export default {
   name: "page1",
   mounted() {
@@ -28,12 +28,13 @@ export default {
   },
   methods: {
     lodaPage() {
-      // Dialog.alert({
+      // this.$dialog.alert({
       //   message: "弹窗内容1212121"
       // });
-      this.$store.commit('SET_INFO', {name: '1212', id: '8888'})
+      this.$store.commit("SET_INFO", { name: "1212", id: "8888" });
 
       console.log(this.$store.state.user.info);
+      this.Utils.showMsg("测试提示");
     },
     delPage() {}
   }

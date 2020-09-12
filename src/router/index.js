@@ -1,32 +1,37 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+
+//按需加载避免进入首页时加载内容过多  import引入会打包并成一个js  require会将你的component分别打包成不同的js  这里按需换取自用方式
+const Home = resolve => require(["../views/Home"], resolve);
+const About = resolve => require(["../views/About"], resolve);
+const Page1 = resolve => require(["../views/page1"], resolve);
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    component: Home,
+    name: "Index",
+    meta: {
+      title: "首页"
+    }
   },
   {
     path: "/about",
+    component: About,
     name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    meta: {
+      title: "关于"
+    }
   },
   {
     path: "/page1",
+    component: Page1,
     name: "Page1",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-        import(/* webpackChunkName: "about" */ "../views/page1.vue")
+    meta: {
+      title: "Page测试页面"
+    }
   }
 ];
 
